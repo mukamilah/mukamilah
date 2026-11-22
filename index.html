@@ -12,9 +12,9 @@
   .hidden { display: none !important; }
 
     header { background: #fff; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 50; }
-  .topbar { display: flex; justify-content: space-between; align-items: center; height: 64px; }
-  .brand { display: flex; align-items: center; gap: 10px; }
-  .avatar-icon { width: 38px; height: 38px; border-radius: 10px; background: var(--primary); color: #fbbf24; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .topbar { display: flex; justify-content: space-between; align-items: center; height: 66px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .avatar-foto { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary); background: #ecfdf5; flex-shrink: 0; }
   .brand h1 { font-size: 15px; font-weight: 700; color: var(--text); }
   .brand span { font-size: 11px; color: var(--primary); font-weight: 600; display: block; }
   .nav-pills { display: flex; gap: 6px; background: #f1f5f9; padding: 4px; border-radius: 12px; }
@@ -57,7 +57,7 @@
   <header>
   <div class="container topbar">
     <div class="brand">
-      <div class="avatar-icon">SM</div>
+      <img src="foto-siti.jpg" alt="Siti Mukamilah, M.Pd." class="avatar-foto" onerror="this.src='https://ui-avatars.com'">
       <div>
         <h1>Siti Mukamilah, M.Pd.</h1>
         <span>Dosen Bahasa Inggris • Fakultas Teknik • LP2M UIM</span>
@@ -95,8 +95,8 @@
       </div>
       <div class="card">
         <span class="pill pill-blue">FAKULTAS TEKNIK</span>
-        <h3 style="font-size:16px;">Pengampu Mata Kuliah</h3>
-        <p style="font-size:13px; color:var(--muted); margin-top:6px;">Evaluasi CBT terstruktur per jurusan dan tingkatan semester dengan sistem kode unik ujian.</p>
+        <h3 style="font-size:16px;">Teknik Informatika</h3>
+        <p style="font-size:13px; color:var(--muted); margin-top:6px;">Evaluasi CBT terstruktur per semester (1–8) dengan sistem kode unik ujian dan rekap nilai otomatis.</p>
       </div>
       <div class="card">
         <span class="pill pill-amber">TUGAS TAMBAHAN</span>
@@ -124,13 +124,13 @@
           <span class="pill pill-blue">SECTION 2</span>
           <h3>Structure & Written Expression</h3>
           <p style="font-size:13px; color:var(--muted); margin:6px 0 14px;">Latihan tata bahasa Inggris akademik standar TOEFL ITP.</p>
-          <button class="btn btn-primary" onclick="mulaiToefl('structure')">Mulai Latihan Structure</button>
+          <button class="btn btn-primary" onclick="mulaiToefl('structure', 'TOEFL Section 2: Structure & Written Expression', 25)">Mulai Latihan Structure</button>
         </div>
         <div class="card" style="margin:0; background:#f8fafc;">
           <span class="pill pill-green">SECTION 3</span>
           <h3>Reading Comprehension</h3>
           <p style="font-size:13px; color:var(--muted); margin:6px 0 14px;">Pemahaman bacaan ilmiah dan kosakata akademik.</p>
-          <button class="btn btn-primary" onclick="mulaiToefl('reading')">Mulai Latihan Reading</button>
+          <button class="btn btn-primary" onclick="mulaiToefl('reading', 'TOEFL Section 3: Reading Comprehension', 55)">Mulai Latihan Reading</button>
         </div>
       </div>
     </div>
@@ -138,27 +138,30 @@
 
     <section id="page-ujian" class="page hidden">
     <div class="card">
-      <span class="pill pill-green">CBT FAKULTAS TEKNIK & UMUM</span>
-      <h2 style="font-size:22px;">Ujian Kuliah Per Jurusan & Tingkatan</h2>
-      <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">Setiap mata kuliah memiliki <strong>Kode Unik</strong> untuk mempermudah pengunduhan rekap nilai.</p>
+      <span class="pill pill-green">CBT FAKULTAS TEKNIK UIM</span>
+      <h2 style="font-size:22px;">Ujian Kuliah Per Program Studi & Semester</h2>
+      <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">Pilih Program Studi dan Semester Anda untuk menampilkan jadwal ujian aktif.</p>
 
       <div class="grid-2" style="background:#f1f5f9; padding:14px; border-radius:12px; margin-bottom:18px;">
         <div>
-          <label>Program Studi / Jurusan</label>
+          <label>Program Studi</label>
           <select id="fJurusan" onchange="filterUjian()">
-            <option value="all">Semua Jurusan</option>
+            <option value="all">Semua Program Studi</option>
             <option value="ti">Teknik Informatika</option>
-            <option value="tind">Teknik Industri</option>
-            <option value="ts">Teknik Sipil</option>
           </select>
         </div>
         <div>
-          <label>Tingkatan / Semester</label>
+          <label>Semester</label>
           <select id="fTingkat" onchange="filterUjian()">
-            <option value="all">Semua Tingkatan</option>
-            <option value="1">Tingkat I (Semester 1–2)</option>
-            <option value="2">Tingkat II (Semester 3–4)</option>
-            <option value="3">Tingkat III (Semester 5–6)</option>
+            <option value="all">Semua Semester</option>
+            <option value="1">Semester 1</option>
+            <option value="2">Semester 2</option>
+            <option value="3">Semester 3</option>
+            <option value="4">Semester 4</option>
+            <option value="5">Semester 5</option>
+            <option value="6">Semester 6</option>
+            <option value="7">Semester 7</option>
+            <option value="8">Semester 8</option>
           </select>
         </div>
       </div>
@@ -259,17 +262,17 @@
   function renderKartuUjian() {
     const wadah = document.getElementById('wadahKartuUjian');
     const selKode = document.getElementById('filterKodeUnik');
-    if (!wadah || typeof dataUjianKuliah === 'undefined') return;
-    wadah.innerHTML = dataUjianKuliah.map(u => `
-      <div class="card item-ujian" data-j="${u.jurusan}" data-t="${u.tingkat}" style="margin:0;">
-        <span class="pill pill-blue">${u.namaJurusan} • ${u.labelTingkat}</span>
+    if (!wadah || typeof jadwalUjian === 'undefined') return;
+    wadah.innerHTML = jadwalUjian.map(u => `
+      <div class="card item-ujian" data-j="${u.jurusan}" data-t="${u.semester}" style="margin:0;">
+        <span class="pill pill-blue">${u.namaJurusan} • Semester ${u.semester}</span>
         <h4 style="font-size:15px;">${u.mataKuliah}</h4>
         <p style="font-size:12px; color:var(--primary); font-weight:700; margin-top:4px;">Kode Unik: ${u.kodeUnik}</p>
-        <p style="font-size:12px; color:var(--muted); margin:4px 0 14px;">Durasi: ${u.durasiMenit} Menit • Token Wajib</p>
+        <p style="font-size:12px; color:var(--muted); margin:4px 0 14px;">Durasi: ${u.durasi} Menit • Token Wajib</p>
         <button class="btn btn-primary" onclick="bukaVerifikasi('${u.id}')">Masuk Ujian</button>
       </div>
     `).join('');
-    dataUjianKuliah.forEach(u => {
+    jadwalUjian.forEach(u => {
       selKode.innerHTML += `<option value="${u.kodeUnik}">${u.kodeUnik} - ${u.mataKuliah}</option>`;
     });
   }
@@ -292,7 +295,7 @@
   }
 
   function bukaVerifikasi(idUjian) {
-    ujianTerpilih = dataUjianKuliah.find(u => u.id === idUjian);
+    ujianTerpilih = jadwalUjian.find(u => u.id === idUjian);
     if (!ujianTerpilih) return;
     document.getElementById('verifKodeUnik').innerText = 'KODE UNIK: ' + ujianTerpilih.kodeUnik;
     document.getElementById('verifTitle').innerText = ujianTerpilih.mataKuliah;
@@ -305,17 +308,19 @@
     const token = document.getElementById('vToken').value.trim().toUpperCase();
     if (!nim || !nama) { alert('Harap isi NIM dan Nama Lengkap!'); return; }
     if (token !== ujianTerpilih.token.toUpperCase()) { alert('Token salah!'); return; }
+    const daftarSoal = (typeof soalUjian !== 'undefined') ? soalUjian.filter(s => s.kodeUnik === ujianTerpilih.kodeUnik) : [];
+    if (!daftarSoal.length) { alert('Soal untuk kode unik ini belum ditambahkan di ujian.js!'); return; }
     document.getElementById('modalVerif').classList.add('hidden');
     modeAktif = 'ujian';
     pesertaAktif = { kodeUnik: ujianTerpilih.kodeUnik, nim: nim, nama: nama, matkul: ujianTerpilih.mataKuliah };
-    jalankanSesiSoal(ujianTerpilih.mataKuliah, `${nama} (${nim}) • Kode: ${ujianTerpilih.kodeUnik}`, ujianTerpilih.soal, ujianTerpilih.durasiMenit);
+    jalankanSesiSoal(ujianTerpilih.mataKuliah, `${nama} (${nim}) • Kode: ${ujianTerpilih.kodeUnik}`, daftarSoal, ujianTerpilih.durasi);
   }
 
-  function mulaiToefl(bagian) {
-    if (typeof dataToefl === 'undefined' || !dataToefl[bagian]) return;
+  function mulaiToefl(kategori, judul, menit) {
+    const daftarSoal = (typeof soalToefl !== 'undefined') ? soalToefl.filter(s => s.kategori === kategori) : [];
+    if (!daftarSoal.length) { alert('Soal TOEFL kategori ini belum ditambahkan di toefl.js!'); return; }
     modeAktif = 'toefl';
-    const paket = dataToefl[bagian];
-    jalankanSesiSoal(paket.judul, 'Simulasi TOEFL Prediction', paket.soal, paket.durasiMenit);
+    jalankanSesiSoal(judul, 'Simulasi TOEFL Prediction', daftarSoal, menit);
   }
 
   function jalankanSesiSoal(judul, peserta, daftarSoal, menit) {
@@ -325,8 +330,8 @@
     document.getElementById('judulUjianAktif').innerText = judul;
     document.getElementById('labelPeserta').innerText = peserta;
     document.getElementById('wadahSoal').innerHTML = soalAktif.map((item, idx) => `
-      <div style="margin-bottom:18px;"><p style="font-weight:700; font-size:14px;">${item.q}</p>
-      ${item.opts.map((op, i) => `<button class="opsi-btn" id="op-${idx}-${i}" onclick="pilihOpsi(${idx}, ${i})">${String.fromCharCode(65+i)}. ${op}</button>`).join('')}
+      <div style="margin-bottom:18px;"><p style="font-weight:700; font-size:14px;">${idx + 1}. ${item.tanya}</p>
+      ${item.opsi.map((op, i) => `<button class="opsi-btn" id="op-${idx}-${i}" onclick="pilihOpsi(${idx}, ${i})">${String.fromCharCode(65+i)}. ${op}</button>`).join('')}
       </div>`).join('');
     let detik = menit * 60; clearInterval(timerInt);
     timerInt = setInterval(() => {
@@ -344,7 +349,7 @@
 
   function selesaiUjian() {
     clearInterval(timerInt);
-    let benar = soalAktif.filter((item, idx) => jawabanUser[idx] === item.ans).length;
+    let benar = soalAktif.filter((item, idx) => jawabanUser[idx] === item.kunci).length;
     if (modeAktif === 'toefl') {
       let skorItp = Math.round(310 + (benar / soalAktif.length) * 367);
       bukaHalaman('toefl', document.querySelectorAll('.nav-btn'));
