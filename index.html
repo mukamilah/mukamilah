@@ -1,460 +1,310 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Akademik | Sitti Mukamilah - UIM</title>
-    <!-- Menggunakan Google Fonts untuk tipografi yang elegan -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-    <!-- Menggunakan Font Awesome untuk Ikon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary-color: #065f46; /* Hijau Akademik UIM */
-            --secondary-color: #0f172a; /* Navy Gelap Profesional */
-            --accent-color: #d97706; /* Emas Aksen */
-            --bg-light: #f8fafc;
-            --text-dark: #1e293b;
-            --text-muted: #64748b;
-            --white: #ffffff;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal Akademik & Ujian | Dosen UIM</title>
+<style>
+  :root { --primary: #064e3b; --primary-light: #047857; --accent: #d97706; --bg: #f8fafc; --text: #0f172a; --muted: #64748b; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 75px; }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 18px; }
+  .hidden { display: none !important; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      header { background: #fff; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 50; }
+  .topbar { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .avatar-icon { width: 38px; height: 38px; border-radius: 10px; background: var(--primary); color: #fbbf24; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .brand h1 { font-size: 15px; font-weight: 700; color: var(--text); }
+  .brand span { font-size: 11px; color: var(--primary); font-weight: 600; display: block; }
+  .nav-pills { display: flex; gap: 6px; background: #f1f5f9; padding: 4px; border-radius: 12px; }
+  .nav-btn { border: none; background: transparent; padding: 8px 14px; border-radius: 9px; font-size: 13px; font-weight: 600; color: var(--muted); cursor: pointer; transition: 0.2s; }
+  .nav-btn.active { background: #fff; color: var(--primary); box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+  .nav-btn:hover:not(.active) { color: var(--text); }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+      .page { padding: 26px 0; animation: fadeIn 0.25s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 22px; box-shadow: 0 2px 10px rgba(15,23,42,0.03); margin-bottom: 18px; }
+  .hero-box { background: linear-gradient(135deg, #022c22, #065f46); color: #fff; border-radius: 20px; padding: 30px 24px; margin-bottom: 20px; }
+  .pill { display: inline-block; padding: 4px 11px; border-radius: 20px; font-size: 11px; font-weight: 700; margin-bottom: 10px; }
+  .pill-gold { background: rgba(251,191,36,0.2); color: #fcd34d; }
+  .pill-amber { background: #fef3c7; color: #92400e; }
+  .pill-green { background: #d1fae5; color: #065f46; }
+  .pill-blue { background: #dbeafe; color: #1e40af; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
-        /* Header & Hero Section */
-        header {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
-            color: var(--white);
-            padding: 3rem 1.5rem;
-            text-align: center;
-        }
-
-        .profile-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .profile-img {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--accent-color);
-            margin-bottom: 1rem;
-            background-color: #cbd5e1;
-        }
-
-        header h1 {
-            font-family: 'Merriweather', serif;
-            font-size: 2rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .affiliation {
-            display: inline-block;
-            margin-top: 0.4rem;
-            padding: 0.35rem 1rem;
-            background-color: rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-        }
-
-        .academic-links {
-            margin-top: 1.2rem;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .academic-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.85rem;
-            background: rgba(0, 0, 0, 0.25);
-            padding: 0.4rem 0.9rem;
-            border-radius: 6px;
-            transition: 0.3s;
-        }
-
-        .academic-links a:hover {
-            background: var(--accent-color);
-        }
-
-        /* Navigation Bar */
-        nav {
-            background-color: var(--white);
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .nav-btn {
-            background: none;
-            border: none;
-            padding: 1rem 1.3rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            cursor: pointer;
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-btn:hover {
-            color: var(--primary-color);
-            background-color: #f1f5f9;
-        }
-
-        .nav-btn.active {
-            color: var(--primary-color);
-            border-bottom: 3px solid var(--primary-color);
-        }
-
-        /* Main Content Area */
-        main {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-            min-height: 55vh;
-        }
-
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .section-title {
-            font-family: 'Merriweather', serif;
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 1.2rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #e2e8f0;
-        }
-
-        /* Cards & Lists */
-        .card {
-            background: var(--white);
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin-bottom: 1.2rem;
-            box-shadow: var(--shadow);
-            border-left: 4px solid var(--primary-color);
-        }
-
-        .card h3 {
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-            font-size: 1.15rem;
-        }
-
-        .meta-info {
-            font-size: 0.85rem;
-            color: var(--accent-color);
-            font-weight: 600;
-            margin-bottom: 0.6rem;
-            display: block;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.2rem;
-        }
-
-        .badge {
-            display: inline-block;
-            background: #e0f2fe;
-            color: #0369a1;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-top: 0.5rem;
-        }
-
-        .btn-download {
-            display: inline-block;
-            margin-top: 0.8rem;
-            padding: 0.4rem 0.9rem;
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.85rem;
-            transition: 0.2s;
-        }
-
-        .btn-download:hover {
-            background-color: #047857;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--secondary-color);
-            color: #94a3b8;
-            text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 3rem;
-            font-size: 0.9rem;
-        }
-
-        footer strong {
-            color: var(--white);
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.5rem; }
-            .nav-btn { padding: 0.8rem; font-size: 0.85rem; }
-        }
-    </style>
+      .btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 18px; border-radius: 10px; font-size: 13px; font-weight: 700; border: none; cursor: pointer; transition: 0.2s; }
+  .btn-primary { background: var(--primary); color: #fff; width: 100%; }
+  .btn-primary:hover { background: var(--primary-light); }
+  .btn-gold { background: #f59e0b; color: #0f172a; }
+  .btn-ghost { background: #f1f5f9; color: var(--text); }
+  select, input { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 13px; margin-top: 4px; background: #fff; }
+  label { font-size: 12px; font-weight: 700; color: #475569; }
+  .opsi-btn { display: block; width: 100%; text-align: left; padding: 12px 14px; margin-top: 8px; border: 1px solid #cbd5e1; border-radius: 10px; background: #fff; font-size: 13px; cursor: pointer; }
+  .opsi-btn.selected { border-color: var(--primary); background: #ecfdf5; font-weight: 600; color: var(--primary); }
+  .modal { position: fixed; inset: 0; background: rgba(15,23,42,0.7); display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 100; }
+  .modal-card { background: #fff; border-radius: 18px; max-width: 440px; width: 100%; padding: 24px; }
+  .bottom-nav { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid #e2e8f0; padding: 8px; justify-content: space-around; z-index: 60; }
+  @media (max-width: 720px) { .nav-pills { display: none; } .bottom-nav { display: flex; } .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
 
-    <!-- HEADER / PROFIL SINGKAT -->
     <header>
-        <div class="profile-container">
-            <!-- Ganti src dengan URL foto profil Anda -->
-            <img src="https://via.placeholder.com/150/065f46/ffffff?text=Sitti+Mukamilah" alt="Foto Profil Sitti Mukamilah" class="profile-img">
-            <h1>Sitti Mukamilah</h1>
-            <div class="affiliation">
-                <i class="fas fa-university"></i> Homebase: Fakultas Teknik — Universitas Islam Madura (UIM)
-            </div>
-            
-            <!-- Tautan ID Akademik -->
-            <div class="academic-links">
-                <a href="#" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                <a href="#" target="_blank"><i class="fas fa-book-open"></i> SINTA ID</a>
-                <a href="#" target="_blank"><i class="fas fa-id-card"></i> Scopus / ORCID</a>
-                <a href="mailto:dosen@uim.ac.id"><i class="fas fa-envelope"></i> Email Institusi</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- MENU NAVIGASI -->
-    <nav>
-        <div class="nav-container">
-            <button class="nav-btn active" onclick="openTab(event, 'profil')">
-                <i class="fas fa-user-tie"></i> Beranda & Profil
-            </button>
-            <button class="nav-btn" onclick="openTab(event, 'pengajaran')">
-                <i class="fas fa-chalkboard-teacher"></i> Pengajaran
-            </button>
-            <button class="nav-btn" onclick="openTab(event, 'penelitian')">
-                <i class="fas fa-microscope"></i> Penelitian
-            </button>
-            <button class="nav-btn" onclick="openTab(event, 'pengabdian')">
-                <i class="fas fa-hands-helping"></i> Pengabdian Masyarakat
-            </button>
-            <button class="nav-btn" onclick="openTab(event, 'penunjang')">
-                <i class="fas fa-award"></i> Kegiatan Penunjang
-            </button>
-        </div>
+  <div class="container topbar">
+    <div class="brand">
+      <div class="avatar-icon">U</div>
+      <div>
+        <h1>[Nama Lengkap & Gelar]</h1>
+        <span>Dosen Bahasa Inggris • Fakultas Teknik • LP2M UIM</span>
+      </div>
+    </div>
+    <nav class="nav-pills">
+      <button class="nav-btn active" onclick="bukaHalaman('home', this)">Beranda</button>
+      <button class="nav-btn" onclick="bukaHalaman('toefl', this)">Tes TOEFL</button>
+      <button class="nav-btn" onclick="bukaHalaman('ujian', this)">Ujian Kuliah</button>
+      <button class="nav-btn" onclick="bukaHalaman('lp2m', this)">LP2M & Riset</button>
     </nav>
+  </div>
+</header>
 
-    <!-- KONTEN UTAMA -->
-    <main>
-        
-        <!-- 1. MENU BERANDA / PROFIL -->
-        <section id="profil" class="tab-content active">
-            <h2 class="section-title">Tentang Saya</h2>
-            <div class="card">
-                <p>Selamat datang di portal akademik pribadi saya. Saya merupakan dosen tetap di <strong>Fakultas Teknik, Universitas Islam Madura (UIM)</strong>.</p>
-                <br>
-                <p>Fokus utama pengajaran dan riset saya adalah pengembangan <em>English for Specific Purposes (ESP)</em> khususnya <em>English for Engineering</em>, integrasi teknologi dalam pembelajaran bahasa (CALL/MALL), serta literasi akademik mahasiswa teknik di lingkungan pesantren dan perguruan tinggi Islam.</p>
-            </div>
+<main class="container">
+  <section id="page-home" class="page">
+    <div class="hero-box">
+      <span class="pill pill-gold">UNIVERSITAS ISLAM MADURA (UIM)</span>
+      <h2 style="font-size:25px; margin-bottom:10px;">Portal Akademik & Evaluasi Pembelajaran</h2>
+      <p style="font-size:14px; color:#d1fae5; max-width:650px; margin-bottom:20px;">
+        Layanan terpadu perkuliahan <strong>Bahasa Inggris (ESP) Fakultas Teknik</strong>, simulasi sertifikasi <strong>TOEFL</strong>, serta pengelolaan penelitian dan pengabdian masyarakat <strong>LP2M UIM</strong>.
+      </p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="btn btn-gold" onclick="bukaHalaman('ujian', document.querySelectorAll('.nav-btn'))">Masuk Ujian Kuliah</button>
+        <button class="btn" style="background:rgba(255,255,255,0.15); color:#fff;" onclick="bukaHalaman('toefl', document.querySelectorAll('.nav-btn'))">Mulai Tes TOEFL</button>
+      </div>
+    </div>
 
-            <div class="grid-2">
-                <div class="card">
-                    <h3><i class="fas fa-graduation-cap"></i> Riwayat Pendidikan</h3>
-                    <ul style="margin-left: 1.2rem; margin-top: 0.5rem;">
-                        <li><strong>S2 Pendidikan Bahasa Inggris</strong> - Universitas [Nama Kampus]</li>
-                        <li><strong>S1 Pendidikan Bahasa Inggris</strong> - Universitas [Nama Kampus]</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3><i class="fas fa-bullseye"></i> Minat Riset (Research Interests)</h3>
-                    <ul style="margin-left: 1.2rem; margin-top: 0.5rem;">
-                        <li>English for Engineering & Technology</li>
-                        <li>Digital Literacy & AI in Language Learning</li>
-                        <li>Curriculum & Material Development (ESP)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    <div class="grid-3">
+      <div class="card">
+        <span class="pill pill-green">BIDANG KEILMUAN</span>
+        <h3 style="font-size:16px;">Bahasa Inggris & TOEFL</h3>
+        <p style="font-size:13px; color:var(--muted); margin-top:6px;">Pengajaran <em>English for Specific Purposes (ESP)</em>, Academic Writing, dan persiapan tes kemahiran bahasa.</p>
+      </div>
+      <div class="card">
+        <span class="pill pill-blue">FAKULTAS TEKNIK</span>
+        <h3 style="font-size:16px;">Pengampu Mata Kuliah</h3>
+        <p style="font-size:13px; color:var(--muted); margin-top:6px;">Melayani perkuliahan dan evaluasi CBT untuk Prodi Teknik Informatika, Teknik Industri, dan Teknik Sipil.</p>
+      </div>
+      <div class="card">
+        <span class="pill pill-amber">TUGAS TAMBAHAN</span>
+        <h3 style="font-size:16px;">Pengelola LP2M UIM</h3>
+        <p style="font-size:13px; color:var(--muted); margin-top:6px;">Koordinasi penelitian dosen, hilirisasi pengabdian masyarakat, dan pendampingan publikasi ilmiah.</p>
+      </div>
+    </div>
+  </section>
 
-        <!-- 2. MENU PENGAJARAN -->
-        <section id="pengajaran" class="tab-content">
-            <h2 class="section-title">Pengajaran & Bahan Ajar</h2>
-            <p style="margin-bottom: 1.2rem; color: var(--text-muted);">Daftar mata kuliah yang diampu di lingkungan Fakultas Teknik Universitas Islam Madura beserta tautan RPS dan modul perkuliahan.</p>
-            
-            <div class="grid-2">
-                <div class="card">
-                    <span class="meta-info">Semester Ganjil • 2 SKS</span>
-                    <h3>English for Engineering (Bahasa Inggris Teknik)</h3>
-                    <p>Membekali mahasiswa teknik dengan kosakata teknis, pemahaman manual/jurnal keteknikan, serta presentasi proyek dalam bahasa Inggris.</p>
-                    <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Unduh RPS & Silabus</a>
-                </div>
+      <section id="page-toefl" class="page hidden">
+    <div class="card">
+      <span class="pill pill-amber">ENGLISH PROFICIENCY CENTER</span>
+      <h2 style="font-size:22px;">Simulasi & Tes TOEFL Prediction</h2>
+      <p style="font-size:13px; color:var(--muted); margin-bottom:18px;">Pilih modul latihan di bawah ini (soal dimuat otomatis dari file <strong>toefl.js</strong>).</p>
 
-                <div class="card">
-                    <span class="meta-info">Semester Genap • 2 SKS</span>
-                    <h3>Academic English & Scientific Writing</h3>
-                    <p>Pelatihan penulisan abstrak jurnal ilmiah, korespondensi profesional, dan persiapan tes kemahiran bahasa Inggris (TOEFL/IELTS).</p>
-                    <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Unduh Modul Ajar</a>
-                </div>
+      <div class="grid-2">
+        <div class="card" style="margin:0; background:#f8fafc;">
+          <span class="pill pill-blue">SECTION 2</span>
+          <h3>Structure & Written Expression</h3>
+          <p style="font-size:13px; color:var(--muted); margin:6px 0 14px;">Latihan tata bahasa Inggris akademik standar TOEFL ITP.</p>
+          <button class="btn btn-primary" onclick="mulaiToefl('structure')">Mulai Latihan Structure</button>
+        </div>
+        <div class="card" style="margin:0; background:#f8fafc;">
+          <span class="pill pill-green">SECTION 3</span>
+          <h3>Reading Comprehension</h3>
+          <p style="font-size:13px; color:var(--muted); margin:6px 0 14px;">Pemahaman teks ilmiah dan kosakata akademik.</p>
+          <button class="btn btn-primary" onclick="mulaiToefl('reading')">Mulai Latihan Reading</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <div class="card">
-                    <span class="meta-info">Mata Kuliah Umum • 2 SKS</span>
-                    <h3>Bahasa Inggris Dasar (General English)</h3>
-                    <p>Penguatan keterampilan komunikasi aktif (Speaking & Listening) serta tata bahasa terapan untuk mahasiswa tahun pertama.</p>
-                    <a href="#" class="btn-download"><i class="fas fa-folder-open"></i> Materi Kuliah</a>
-                </div>
-            </div>
-        </section>
+      <section id="page-ujian" class="page hidden">
+    <div class="card">
+      <span class="pill pill-green">CBT FAKULTAS TEKNIK & UMUM</span>
+      <h2 style="font-size:22px;">Ujian Kuliah Per Jurusan & Tingkatan</h2>
+      <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">Filter Program Studi dan Tingkatan Semester (jadwal & soal dimuat dari <strong>ujian.js</strong>).</p>
 
-        <!-- 3. MENU PENELITIAN -->
-        <section id="penelitian" class="tab-content">
-            <h2 class="section-title">Penelitian & Publikasi Ilmiah</h2>
-            
-            <div class="card">
-                <span class="meta-info">Jurnal Internasional / SINTA 2 • Tahun 2025</span>
-                <h3>Developing ESP Module Based on Project-Based Learning for Informatics Engineering Students at Universitas Islam Madura</h3>
-                <p><strong>Penulis:</strong> Sitti Mukamilah, dkk. | <strong>Jurnal:</strong> Journal of English Education and Technology</p>
-                <span class="badge">DOI: 10.1234/jeet.v10i2.2025</span>
-                <br>
-                <a href="#" class="btn-download"><i class="fas fa-external-link-alt"></i> Baca Artikel</a>
-            </div>
+      <div class="grid-2" style="background:#f1f5f9; padding:14px; border-radius:12px; margin-bottom:18px;">
+        <div>
+          <label>Program Studi / Jurusan</label>
+          <select id="fJurusan" onchange="filterUjian()">
+            <option value="all">Semua Jurusan</option>
+            <option value="ti">Teknik Informatika</option>
+            <option value="tind">Teknik Industri</option>
+            <option value="ts">Teknik Sipil</option>
+          </select>
+        </div>
+        <div>
+          <label>Tingkatan / Semester</label>
+          <select id="fTingkat" onchange="filterUjian()">
+            <option value="all">Semua Tingkatan</option>
+            <option value="1">Tingkat I (Semester 1–2)</option>
+            <option value="2">Tingkat II (Semester 3–4)</option>
+            <option value="3">Tingkat III (Semester 5–6)</option>
+          </select>
+        </div>
+      </div>
 
-            <div class="card">
-                <span class="meta-info">Penelitian Hibah Internal UIM • Tahun 2024</span>
-                <h3>Analisis Kebutuhan (Needs Analysis) Kemampuan Bahasa Inggris Mahasiswa Fakultas Teknik dalam Menghadapi Era Industri 4.0</h3>
-                <p><strong>Skema:</strong> Penelitian Dosen Pemula / Internal LPPM UIM</p>
-                <span class="badge">Laporan Penelitian</span>
-            </div>
+      <div class="grid-3" id="wadahKartuUjian"></div>
+    </div>
+  </section>
 
-            <div class="card">
-                <span class="meta-info">Prosiding Seminar Nasional • Tahun 2023</span>
-                <h3>Pemanfaatan Kecerdasan Buatan (AI) dalam Meningkatkan Kemampuan Membaca Teks Teknik Berbahasa Inggris</h3>
-                <p><strong>Forum:</strong> Seminar Nasional Teknologi dan Pendidikan, Pamekasan</p>
-                <span class="badge">Prosiding Terindeks</span>
-            </div>
-        </section>
+      <section id="page-lp2m" class="page hidden">
+    <div class="card">
+      <span class="pill pill-green">LP2M UNIVERSITAS ISLAM MADURA</span>
+      <h2 style="font-size:22px; margin-bottom:10px;">Penelitian, Pengabdian & Publikasi Ilmiah</h2>
+      <p style="font-size:14px; color:#475569; margin-bottom:16px;">Memfasilitasi pendampingan penyusunan proposal hibah penelitian, pengabdian kepada masyarakat (PkM), serta klinik penulisan artikel jurnal bereputasi di lingkungan UIM.</p>
+      <div class="grid-2">
+        <div class="card" style="margin:0; background:#f8fafc;">
+          <h4 style="font-size:15px;">1. Klinik Publikasi & Abstrak Inggris</h4>
+          <p style="font-size:13px; color:var(--muted); margin-top:4px;">Pendampingan penerjemahan dan penyuntingan abstrak jurnal terakreditasi SINTA & Scopus bagi dosen UIM.</p>
+        </div>
+        <div class="card" style="margin:0; background:#f8fafc;">
+          <h4 style="font-size:15px;">2. Pengabdian Masyarakat Berbasis Teknologi</h4>
+          <p style="font-size:13px; color:var(--muted); margin-top:4px;">Sinergi dosen dan mahasiswa Fakultas Teknik dalam pemberdayaan masyarakat di wilayah Pamekasan dan Madura.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- 4. MENU PENGABDIAN KEPADA MASYARAKAT (PkM) -->
-        <section id="pengabdian" class="tab-content">
-            <h2 class="section-title">Pengabdian kepada Masyarakat (PkM)</h2>
-            
-            <div class="card">
-                <span class="meta-info">Tahun 2025 • Lokasi: Kabupaten Pamekasan, Madura</span>
-                <h3>Pelatihan Bahasa Inggris Pariwisata dan Digital Branding bagi Pelaku UMKM Batik Tulis Madura</h3>
-                <p>Pendampingan penyusunan katalog produk dwibahasa (Indonesia-Inggris) dan komunikasi dasar untuk memperluas pasar ekspor pengrajin batik lokal.</p>
-                <span class="badge">Ketua Pelaksana</span>
-            </div>
+  <section id="page-soal" class="page hidden">
+    <div class="card">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e2e8f0; padding-bottom:12px; margin-bottom:16px;">
+        <div>
+          <span class="pill pill-green" id="labelPeserta">Peserta Aktif</span>
+          <h3 id="judulUjianAktif" style="font-size:18px;">Judul Ujian</h3>
+        </div>
+        <div style="background:#fef3c7; color:#92400e; padding:6px 12px; border-radius:8px; font-weight:800; font-size:14px;" id="timerBox">30:00</div>
+      </div>
+      <div id="wadahSoal"></div>
+      <div style="display:flex; gap:10px; margin-top:20px;">
+        <button class="btn btn-ghost" onclick="keluarSoal()">Keluar</button>
+        <button class="btn btn-primary" onclick="selesaiUjian()">Kumpulkan Jawaban</button>
+      </div>
+    </div>
+  </section>
+</main>
 
-            <div class="card">
-                <span class="meta-info">Tahun 2024 • Lokasi: Pondok Pesantren Mitra UIM</span>
-                <h3>Workshop Pembelajaran Bahasa Inggris Komunikatif Berbasis Teknologi bagi Guru Madrasah Aliyah</h3>
-                <p>Pengenalan aplikasi interaktif gratis untuk meningkatkan minat belajar bahasa Inggris santri di lingkungan pesantren.</p>
-                <span class="badge">Anggota Tim / Pemateri</span>
-            </div>
-        </section>
+    <nav class="bottom-nav">
+  <button class="nav-btn active" onclick="bukaHalaman('home', this)">Beranda</button>
+  <button class="nav-btn" onclick="bukaHalaman('toefl', this)">TOEFL</button>
+  <button class="nav-btn" onclick="bukaHalaman('ujian', this)">Ujian</button>
+  <button class="nav-btn" onclick="bukaHalaman('lp2m', this)">LP2M</button>
+</nav>
 
-        <!-- 5. MENU KEGIATAN PENUNJANG -->
-        <section id="penunjang" class="tab-content">
-            <h2 class="section-title">Kegiatan Penunjang Akademik & Profesional</h2>
-            
-            <div class="grid-2">
-                <div class="card">
-                    <span class="meta-info">2024 - Sekarang</span>
-                    <h3>Reviewer & Editor Jurnal Ilmiah</h3>
-                    <p>Mitra Bestari (Peer Reviewer) pada jurnal pendidikan bahasa Inggris dan jurnal pengabdian masyarakat terakreditasi SINTA.</p>
-                </div>
+<div id="modalVerif" class="modal hidden">
+  <div class="modal-card">
+    <span class="pill pill-green">VERIFIKASI MAHASISWA</span>
+    <h3 id="verifTitle" style="font-size:17px; margin-bottom:14px;">Nama Ujian</h3>
+    <div style="margin-bottom:10px;"><label>NIM Mahasiswa</label><input type="text" id="vNim" placeholder="Contoh: 2024020101"></div>
+    <div style="margin-bottom:10px;"><label>Nama Lengkap</label><input type="text" id="vNama" placeholder="Nama sesuai absensi"></div>
+    <div style="margin-bottom:16px;"><label>Token Ujian</label><input type="text" id="vToken" placeholder="Masukkan token dari dosen"></div>
+    <div style="display:flex; gap:10px;">
+      <button class="btn btn-ghost" style="flex:1;" onclick="document.getElementById('modalVerif').classList.add('hidden')">Batal</button>
+      <button class="btn btn-primary" style="flex:2;" onclick="prosesMasukUjian()">Mulai Ujian</button>
+    </div>
+  </div>
+</div>
 
-                <div class="card">
-                    <span class="meta-info">2023 - Sekarang</span>
-                    <h3>Narasumber & Instruktur Pelatihan</h3>
-                    <p>Instruktur pelatihan TOEFL Preparation dan pembimbing karya tulis ilmiah mahasiswa di Fakultas Teknik Universitas Islam Madura.</p>
-                </div>
+<script src="toefl.js"></script>
+<script src="ujian.js"></script>
+<script>
+  let soalAktif = [], jawabanUser = {}, timerInt, ujianTerpilih = null;
 
-                <div class="card">
-                    <span class="meta-info">Keanggotaan Organisasi</span>
-                    <h3>Asosiasi Profesi</h3>
-                    <p>Anggota aktif TEFLIN (The Association for the Teaching of English as a Foreign Language in Indonesia) dan ADRI.</p>
-                </div>
+  function renderKartuUjian() {
+    const wadah = document.getElementById('wadahKartuUjian');
+    if (!wadah || typeof dataUjianKuliah === 'undefined') return;
+    wadah.innerHTML = dataUjianKuliah.map(u => `
+      <div class="card item-ujian" data-j="${u.jurusan}" data-t="${u.tingkat}" style="margin:0;">
+        <span class="pill pill-blue">${u.namaJurusan} • ${u.labelTingkat}</span>
+        <h4 style="font-size:15px;">${u.mataKuliah}</h4>
+        <p style="font-size:12px; color:var(--muted); margin:6px 0 14px;">Durasi: ${u.durasiMenit} Menit • Token Wajib</p>
+        <button class="btn btn-primary" onclick="bukaVerifikasi('${u.id}')">Masuk Ujian</button>
+      </div>
+    `).join('');
+  }
+  renderKartuUjian();
 
-                <div class="card">
-                    <span class="meta-info">Sertifikasi Kompetensi</span>
-                    <h3>Sertifikat Pendidik & Keahlian</h3>
-                    <p>Tersertifikasi Dosen (Serdos) Kemendikbudristek serta sertifikasi kompetensi bahasa Inggris internasional.</p>
-                </div>
-            </div>
-        </section>
+      function bukaHalaman(id, btn) {
+    clearInterval(timerInt);
+    document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+    document.getElementById('page-' + id).classList.remove('hidden');
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+  }
 
-    </main>
+  function filterUjian() {
+    const j = document.getElementById('fJurusan').value;
+    const t = document.getElementById('fTingkat').value;
+    document.querySelectorAll('.item-ujian').forEach(el => {
+      const ok = (j === 'all' || el.dataset.j === j) && (t === 'all' || el.dataset.t === t);
+      el.classList.toggle('hidden', !ok);
+    });
+  }
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 <strong>Sitti Mukamilah</strong></p>
-        <p>Fakultas Teknik — Universitas Islam Madura (UIM), Pamekasan, Jawa Timur</p>
-    </footer>
+  function bukaVerifikasi(idUjian) {
+    ujianTerpilih = dataUjianKuliah.find(u => u.id === idUjian);
+    if (!ujianTerpilih) return;
+    document.getElementById('verifTitle').innerText = ujianTerpilih.mataKuliah;
+    document.getElementById('vToken').value = '';
+    document.getElementById('modalVerif').classList.remove('hidden');
+  }
 
-    <!-- JAVASCRIPT UNTUK NAVIGASI TAB -->
-    <script>
-        function openTab(evt, tabName) {
-            // Sembunyikan semua konten tab
-            const tabContents = document.getElementsByClassName("tab-content");
-            for (let i = 0; i < tabContents.length; i++) {
-                tabContents[i].classList.remove("active");
-            }
+  function prosesMasukUjian() {
+    const nim = document.getElementById('vNim').value.trim();
+    const nama = document.getElementById('vNama').value.trim();
+    const token = document.getElementById('vToken').value.trim().toUpperCase();
+    if (!nim || !nama) { alert('Harap isi NIM dan Nama Lengkap!'); return; }
+    if (token !== ujianTerpilih.token.toUpperCase()) { alert('Token salah! Cek kembali kode dari dosen.'); return; }
+    document.getElementById('modalVerif').classList.add('hidden');
+    jalankanSesiSoal(ujianTerpilih.mataKuliah, nama + ' (' + nim + ')', ujianTerpilih.soal, ujianTerpilih.durasiMenit);
+  }
 
-            // Hapus kelas 'active' dari semua tombol menu
-            const navBtns = document.getElementsByClassName("nav-btn");
-            for (let i = 0; i < navBtns.length; i++) {
-                navBtns[i].classList.remove("active");
-            }
+  function mulaiToefl(bagian) {
+    if (typeof dataToefl === 'undefined' || !dataToefl[bagian]) { alert('File toefl.js belum terbaca!'); return; }
+    const paket = dataToefl[bagian];
+    jalankanSesiSoal(paket.judul, 'Mode Latihan TOEFL', paket.soal, paket.durasiMenit);
+  }
 
-            // Tampilkan tab yang dipilih dan aktifkan tombolnya
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-        }
-    </script>
+  function jalankanSesiSoal(judul, peserta, daftarSoal, menit) {
+    soalAktif = daftarSoal; jawabanUser = {};
+    document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+    document.getElementById('page-soal').classList.remove('hidden');
+    document.getElementById('judulUjianAktif').innerText = judul;
+    document.getElementById('labelPeserta').innerText = peserta;
+    document.getElementById('wadahSoal').innerHTML = soalAktif.map((item, idx) => `
+      <div style="margin-bottom:18px;"><p style="font-weight:700; font-size:14px;">${item.q}</p>
+      ${item.opts.map((op, i) => `<button class="opsi-btn" id="op-${idx}-${i}" onclick="pilihOpsi(${idx}, ${i})">${String.fromCharCode(65+i)}. ${op}</button>`).join('')}
+      </div>`).join('');
+    let detik = menit * 60; clearInterval(timerInt);
+    timerInt = setInterval(() => {
+      detik--; let m = Math.floor(detik / 60), s = detik % 60;
+      document.getElementById('timerBox').innerText = `${m}:${s < 10 ? '0'+s : s}`;
+      if (detik <= 0) selesaiUjian();
+    }, 1000);
+  }
 
+  function pilihOpsi(noSoal, idxOpsi) {
+    jawabanUser[noSoal] = idxOpsi;
+    for (let i = 0; i < 4; i++) document.getElementById(`op-${noSoal}-${i}`).classList.remove('selected');
+    document.getElementById(`op-${noSoal}-${idxOpsi}`).classList.add('selected');
+  }
+
+  function selesaiUjian() {
+    clearInterval(timerInt);
+    let benar = soalAktif.filter((item, idx) => jawabanUser[idx] === item.ans).length;
+    alert(`Ujian Selesai!\nJawaban Benar: ${benar} dari ${soalAktif.length}\nSkor Akhir: ${Math.round((benar / soalAktif.length) * 100)}`);
+    bukaHalaman('home', document.querySelectorAll('.nav-btn'));
+  }
+
+  function keluarSoal() { if (confirm('Yakin keluar dari ruang ujian?')) bukaHalaman('home', document.querySelectorAll('.nav-btn')); }
+</script>
 </body>
 </html>
