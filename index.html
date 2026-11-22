@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portal Akademik & Ujian | Dosen UIM</title>
+<title>Siti Mukamilah, M.Pd. | Portal Akademik & Ujian UIM</title>
 <style>
   :root { --primary: #064e3b; --primary-light: #047857; --accent: #d97706; --bg: #f8fafc; --text: #0f172a; --muted: #64748b; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -11,18 +11,18 @@
   .container { max-width: 960px; margin: 0 auto; padding: 0 18px; }
   .hidden { display: none !important; }
 
-      header { background: #fff; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 50; }
+    header { background: #fff; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 50; }
   .topbar { display: flex; justify-content: space-between; align-items: center; height: 64px; }
   .brand { display: flex; align-items: center; gap: 10px; }
-  .avatar-icon { width: 38px; height: 38px; border-radius: 10px; background: var(--primary); color: #fbbf24; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .avatar-icon { width: 38px; height: 38px; border-radius: 10px; background: var(--primary); color: #fbbf24; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 16px; }
   .brand h1 { font-size: 15px; font-weight: 700; color: var(--text); }
   .brand span { font-size: 11px; color: var(--primary); font-weight: 600; display: block; }
   .nav-pills { display: flex; gap: 6px; background: #f1f5f9; padding: 4px; border-radius: 12px; }
-  .nav-btn { border: none; background: transparent; padding: 8px 14px; border-radius: 9px; font-size: 13px; font-weight: 600; color: var(--muted); cursor: pointer; transition: 0.2s; }
+  .nav-btn { border: none; background: transparent; padding: 8px 13px; border-radius: 9px; font-size: 13px; font-weight: 600; color: var(--muted); cursor: pointer; transition: 0.2s; }
   .nav-btn.active { background: #fff; color: var(--primary); box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
   .nav-btn:hover:not(.active) { color: var(--text); }
 
-      .page { padding: 26px 0; animation: fadeIn 0.25s ease; }
+    .page { padding: 26px 0; animation: fadeIn 0.25s ease; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
   .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 22px; box-shadow: 0 2px 10px rgba(15,23,42,0.03); margin-bottom: 18px; }
   .hero-box { background: linear-gradient(135deg, #022c22, #065f46); color: #fff; border-radius: 20px; padding: 30px 24px; margin-bottom: 20px; }
@@ -34,7 +34,7 @@
   .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
-      .btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 18px; border-radius: 10px; font-size: 13px; font-weight: 700; border: none; cursor: pointer; transition: 0.2s; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 18px; border-radius: 10px; font-size: 13px; font-weight: 700; border: none; cursor: pointer; transition: 0.2s; }
   .btn-primary { background: var(--primary); color: #fff; width: 100%; }
   .btn-primary:hover { background: var(--primary-light); }
   .btn-gold { background: #f59e0b; color: #0f172a; }
@@ -43,6 +43,9 @@
   label { font-size: 12px; font-weight: 700; color: #475569; }
   .opsi-btn { display: block; width: 100%; text-align: left; padding: 12px 14px; margin-top: 8px; border: 1px solid #cbd5e1; border-radius: 10px; background: #fff; font-size: 13px; cursor: pointer; }
   .opsi-btn.selected { border-color: var(--primary); background: #ecfdf5; font-weight: 600; color: var(--primary); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
+  th, td { border: 1px solid #e2e8f0; padding: 10px; text-align: left; }
+  th { background: #f8fafc; font-weight: 700; }
   .modal { position: fixed; inset: 0; background: rgba(15,23,42,0.7); display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 100; }
   .modal-card { background: #fff; border-radius: 18px; max-width: 440px; width: 100%; padding: 24px; }
   .bottom-nav { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid #e2e8f0; padding: 8px; justify-content: space-around; z-index: 60; }
@@ -51,12 +54,12 @@
 </head>
 <body>
 
-    <header>
+  <header>
   <div class="container topbar">
     <div class="brand">
-      <div class="avatar-icon">U</div>
+      <div class="avatar-icon">SM</div>
       <div>
-        <h1>[Nama Lengkap & Gelar]</h1>
+        <h1>Siti Mukamilah, M.Pd.</h1>
         <span>Dosen Bahasa Inggris • Fakultas Teknik • LP2M UIM</span>
       </div>
     </div>
@@ -64,7 +67,8 @@
       <button class="nav-btn active" onclick="bukaHalaman('home', this)">Beranda</button>
       <button class="nav-btn" onclick="bukaHalaman('toefl', this)">Tes TOEFL</button>
       <button class="nav-btn" onclick="bukaHalaman('ujian', this)">Ujian Kuliah</button>
-      <button class="nav-btn" onclick="bukaHalaman('lp2m', this)">LP2M & Riset</button>
+      <button class="nav-btn" onclick="bukaHalaman('rekap', this)">Rekap Nilai</button>
+      <button class="nav-btn" onclick="bukaHalaman('lp2m', this)">LP2M</button>
     </nav>
   </div>
 </header>
@@ -73,9 +77,9 @@
   <section id="page-home" class="page">
     <div class="hero-box">
       <span class="pill pill-gold">UNIVERSITAS ISLAM MADURA (UIM)</span>
-      <h2 style="font-size:25px; margin-bottom:10px;">Portal Akademik & Evaluasi Pembelajaran</h2>
+      <h2 style="font-size:24px; margin-bottom:8px;">Siti Mukamilah, M.Pd.</h2>
       <p style="font-size:14px; color:#d1fae5; max-width:650px; margin-bottom:20px;">
-        Layanan terpadu perkuliahan <strong>Bahasa Inggris (ESP) Fakultas Teknik</strong>, simulasi sertifikasi <strong>TOEFL</strong>, serta pengelolaan penelitian dan pengabdian masyarakat <strong>LP2M UIM</strong>.
+        Portal resmi perkuliahan <strong>Bahasa Inggris (ESP) Fakultas Teknik</strong>, pusat simulasi sertifikasi <strong>TOEFL Prediction</strong>, serta informasi penelitian dan pengabdian masyarakat <strong>LP2M UIM</strong>.
       </p>
       <div style="display:flex; gap:10px; flex-wrap:wrap;">
         <button class="btn btn-gold" onclick="bukaHalaman('ujian', document.querySelectorAll('.nav-btn'))">Masuk Ujian Kuliah</button>
@@ -87,26 +91,33 @@
       <div class="card">
         <span class="pill pill-green">BIDANG KEILMUAN</span>
         <h3 style="font-size:16px;">Bahasa Inggris & TOEFL</h3>
-        <p style="font-size:13px; color:var(--muted); margin-top:6px;">Pengajaran <em>English for Specific Purposes (ESP)</em>, Academic Writing, dan persiapan tes kemahiran bahasa.</p>
+        <p style="font-size:13px; color:var(--muted); margin-top:6px;">Pengajaran <em>English for Specific Purposes (ESP)</em>, Academic Writing, dan tes kemahiran bahasa Inggris.</p>
       </div>
       <div class="card">
         <span class="pill pill-blue">FAKULTAS TEKNIK</span>
         <h3 style="font-size:16px;">Pengampu Mata Kuliah</h3>
-        <p style="font-size:13px; color:var(--muted); margin-top:6px;">Melayani perkuliahan dan evaluasi CBT untuk Prodi Teknik Informatika, Teknik Industri, dan Teknik Sipil.</p>
+        <p style="font-size:13px; color:var(--muted); margin-top:6px;">Evaluasi CBT terstruktur per jurusan dan tingkatan semester dengan sistem kode unik ujian.</p>
       </div>
       <div class="card">
         <span class="pill pill-amber">TUGAS TAMBAHAN</span>
         <h3 style="font-size:16px;">Pengelola LP2M UIM</h3>
-        <p style="font-size:13px; color:var(--muted); margin-top:6px;">Koordinasi penelitian dosen, hilirisasi pengabdian masyarakat, dan pendampingan publikasi ilmiah.</p>
+        <p style="font-size:13px; color:var(--muted); margin-top:6px;">Koordinasi penelitian dosen, pengabdian masyarakat, dan pendampingan publikasi ilmiah UIM.</p>
       </div>
     </div>
   </section>
 
-      <section id="page-toefl" class="page hidden">
+    <section id="page-toefl" class="page hidden">
     <div class="card">
       <span class="pill pill-amber">ENGLISH PROFICIENCY CENTER</span>
       <h2 style="font-size:22px;">Simulasi & Tes TOEFL Prediction</h2>
-      <p style="font-size:13px; color:var(--muted); margin-bottom:18px;">Pilih modul latihan di bawah ini (soal dimuat otomatis dari file <strong>toefl.js</strong>).</p>
+      <p style="font-size:13px; color:var(--muted); margin-bottom:18px;">Nilai dan konversi skor TOEFL langsung muncul di layar begitu tes selesai dikerjakan.</p>
+
+      <div id="boxHasilToefl" class="hidden" style="background:#ecfdf5; border:2px solid #059669; border-radius:14px; padding:20px; margin-bottom:20px; text-align:center;">
+        <span class="pill pill-green">HASIL TES TOEFL SELESAI</span>
+        <h3 id="judulHasilToefl" style="font-size:17px; color:#064e3b;">Nama Modul TOEFL</h3>
+        <div style="font-size:36px; font-weight:800; color:#047857; margin:8px 0;" id="angkaSkorToefl">550</div>
+        <p id="detailHasilToefl" style="font-size:13px; color:#065f46; font-weight:600;">Jawaban Benar: 0 dari 0</p>
+      </div>
 
       <div class="grid-2">
         <div class="card" style="margin:0; background:#f8fafc;">
@@ -118,18 +129,18 @@
         <div class="card" style="margin:0; background:#f8fafc;">
           <span class="pill pill-green">SECTION 3</span>
           <h3>Reading Comprehension</h3>
-          <p style="font-size:13px; color:var(--muted); margin:6px 0 14px;">Pemahaman teks ilmiah dan kosakata akademik.</p>
+          <p style="font-size:13px; color:var(--muted); margin:6px 0 14px;">Pemahaman bacaan ilmiah dan kosakata akademik.</p>
           <button class="btn btn-primary" onclick="mulaiToefl('reading')">Mulai Latihan Reading</button>
         </div>
       </div>
     </div>
   </section>
 
-      <section id="page-ujian" class="page hidden">
+    <section id="page-ujian" class="page hidden">
     <div class="card">
       <span class="pill pill-green">CBT FAKULTAS TEKNIK & UMUM</span>
       <h2 style="font-size:22px;">Ujian Kuliah Per Jurusan & Tingkatan</h2>
-      <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">Filter Program Studi dan Tingkatan Semester (jadwal & soal dimuat dari <strong>ujian.js</strong>).</p>
+      <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">Setiap mata kuliah memiliki <strong>Kode Unik</strong> untuk mempermudah pengunduhan rekap nilai.</p>
 
       <div class="grid-2" style="background:#f1f5f9; padding:14px; border-radius:12px; margin-bottom:18px;">
         <div>
@@ -151,24 +162,50 @@
           </select>
         </div>
       </div>
-
       <div class="grid-3" id="wadahKartuUjian"></div>
     </div>
   </section>
 
-      <section id="page-lp2m" class="page hidden">
+  <section id="page-rekap" class="page hidden">
+    <div class="card">
+      <span class="pill pill-amber">ADMIN & DOSEN PENGAMPU</span>
+      <h2 style="font-size:22px;">Rekapitulasi & Download Nilai Ujian</h2>
+      <p style="font-size:13px; color:var(--muted); margin-bottom:14px;">Filter berdasarkan <strong>Kode Unik Ujian</strong> lalu unduh file Excel/CSV.</p>
+      
+      <div class="grid-2" style="background:#f1f5f9; padding:14px; border-radius:12px; align-items:end;">
+        <div>
+          <label>Filter Kode Unik Ujian</label>
+          <select id="filterKodeUnik" onchange="tampilkanTabelRekap()">
+            <option value="ALL">Semua Kode Unik Ujian</option>
+          </select>
+        </div>
+        <div>
+          <button class="btn btn-primary" onclick="downloadRekapCSV()">Download Rekap Nilai (.CSV)</button>
+        </div>
+      </div>
+
+      <div style="overflow-x:auto;">
+        <table>
+          <thead><tr><th>Kode Unik</th><th>NIM</th><th>Nama Mahasiswa</th><th>Mata Kuliah</th><th>Skor</th></tr></thead>
+          <tbody id="bodyTabelRekap"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+    <section id="page-lp2m" class="page hidden">
     <div class="card">
       <span class="pill pill-green">LP2M UNIVERSITAS ISLAM MADURA</span>
       <h2 style="font-size:22px; margin-bottom:10px;">Penelitian, Pengabdian & Publikasi Ilmiah</h2>
-      <p style="font-size:14px; color:#475569; margin-bottom:16px;">Memfasilitasi pendampingan penyusunan proposal hibah penelitian, pengabdian kepada masyarakat (PkM), serta klinik penulisan artikel jurnal bereputasi di lingkungan UIM.</p>
+      <p style="font-size:14px; color:#475569; margin-bottom:16px;">Layanan pendampingan hibah penelitian dosen, pengabdian kepada masyarakat (PkM), serta klinik penulisan artikel ilmiah dan abstrak berbahasa Inggris di lingkungan UIM.</p>
       <div class="grid-2">
         <div class="card" style="margin:0; background:#f8fafc;">
           <h4 style="font-size:15px;">1. Klinik Publikasi & Abstrak Inggris</h4>
-          <p style="font-size:13px; color:var(--muted); margin-top:4px;">Pendampingan penerjemahan dan penyuntingan abstrak jurnal terakreditasi SINTA & Scopus bagi dosen UIM.</p>
+          <p style="font-size:13px; color:var(--muted); margin-top:4px;">Penyuntingan abstrak jurnal terakreditasi SINTA & Scopus bagi civitas akademika UIM.</p>
         </div>
         <div class="card" style="margin:0; background:#f8fafc;">
-          <h4 style="font-size:15px;">2. Pengabdian Masyarakat Berbasis Teknologi</h4>
-          <p style="font-size:13px; color:var(--muted); margin-top:4px;">Sinergi dosen dan mahasiswa Fakultas Teknik dalam pemberdayaan masyarakat di wilayah Pamekasan dan Madura.</p>
+          <h4 style="font-size:15px;">2. Hilirisasi Pengabdian Masyarakat</h4>
+          <p style="font-size:13px; color:var(--muted); margin-top:4px;">Sinergi dosen dan mahasiswa Fakultas Teknik dalam pemberdayaan masyarakat Madura.</p>
         </div>
       </div>
     </div>
@@ -192,17 +229,18 @@
   </section>
 </main>
 
-    <nav class="bottom-nav">
+  <nav class="bottom-nav">
   <button class="nav-btn active" onclick="bukaHalaman('home', this)">Beranda</button>
   <button class="nav-btn" onclick="bukaHalaman('toefl', this)">TOEFL</button>
   <button class="nav-btn" onclick="bukaHalaman('ujian', this)">Ujian</button>
+  <button class="nav-btn" onclick="bukaHalaman('rekap', this)">Rekap</button>
   <button class="nav-btn" onclick="bukaHalaman('lp2m', this)">LP2M</button>
 </nav>
 
 <div id="modalVerif" class="modal hidden">
   <div class="modal-card">
-    <span class="pill pill-green">VERIFIKASI MAHASISWA</span>
-    <h3 id="verifTitle" style="font-size:17px; margin-bottom:14px;">Nama Ujian</h3>
+    <span class="pill pill-blue" id="verifKodeUnik">KODE UNIK: -</span>
+    <h3 id="verifTitle" style="font-size:17px; margin-bottom:12px;">Nama Ujian</h3>
     <div style="margin-bottom:10px;"><label>NIM Mahasiswa</label><input type="text" id="vNim" placeholder="Contoh: 2024020101"></div>
     <div style="margin-bottom:10px;"><label>Nama Lengkap</label><input type="text" id="vNama" placeholder="Nama sesuai absensi"></div>
     <div style="margin-bottom:16px;"><label>Token Ujian</label><input type="text" id="vToken" placeholder="Masukkan token dari dosen"></div>
@@ -216,61 +254,68 @@
 <script src="toefl.js"></script>
 <script src="ujian.js"></script>
 <script>
-  let soalAktif = [], jawabanUser = {}, timerInt, ujianTerpilih = null;
+  let soalAktif = [], jawabanUser = {}, timerInt, ujianTerpilih = null, modeAktif = 'ujian', pesertaAktif = {};
 
   function renderKartuUjian() {
     const wadah = document.getElementById('wadahKartuUjian');
+    const selKode = document.getElementById('filterKodeUnik');
     if (!wadah || typeof dataUjianKuliah === 'undefined') return;
     wadah.innerHTML = dataUjianKuliah.map(u => `
       <div class="card item-ujian" data-j="${u.jurusan}" data-t="${u.tingkat}" style="margin:0;">
         <span class="pill pill-blue">${u.namaJurusan} • ${u.labelTingkat}</span>
         <h4 style="font-size:15px;">${u.mataKuliah}</h4>
-        <p style="font-size:12px; color:var(--muted); margin:6px 0 14px;">Durasi: ${u.durasiMenit} Menit • Token Wajib</p>
+        <p style="font-size:12px; color:var(--primary); font-weight:700; margin-top:4px;">Kode Unik: ${u.kodeUnik}</p>
+        <p style="font-size:12px; color:var(--muted); margin:4px 0 14px;">Durasi: ${u.durasiMenit} Menit • Token Wajib</p>
         <button class="btn btn-primary" onclick="bukaVerifikasi('${u.id}')">Masuk Ujian</button>
       </div>
     `).join('');
+    dataUjianKuliah.forEach(u => {
+      selKode.innerHTML += `<option value="${u.kodeUnik}">${u.kodeUnik} - ${u.mataKuliah}</option>`;
+    });
   }
   renderKartuUjian();
 
-      function bukaHalaman(id, btn) {
+    function bukaHalaman(id, btn) {
     clearInterval(timerInt);
     document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
     document.getElementById('page-' + id).classList.remove('hidden');
     document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
     if (btn) btn.classList.add('active');
+    if (id === 'rekap') tampilkanTabelRekap();
   }
 
   function filterUjian() {
-    const j = document.getElementById('fJurusan').value;
-    const t = document.getElementById('fTingkat').value;
+    const j = document.getElementById('fJurusan').value, t = document.getElementById('fTingkat').value;
     document.querySelectorAll('.item-ujian').forEach(el => {
-      const ok = (j === 'all' || el.dataset.j === j) && (t === 'all' || el.dataset.t === t);
-      el.classList.toggle('hidden', !ok);
+      el.classList.toggle('hidden', !((j === 'all' || el.dataset.j === j) && (t === 'all' || el.dataset.t === t)));
     });
   }
 
   function bukaVerifikasi(idUjian) {
     ujianTerpilih = dataUjianKuliah.find(u => u.id === idUjian);
     if (!ujianTerpilih) return;
+    document.getElementById('verifKodeUnik').innerText = 'KODE UNIK: ' + ujianTerpilih.kodeUnik;
     document.getElementById('verifTitle').innerText = ujianTerpilih.mataKuliah;
     document.getElementById('vToken').value = '';
     document.getElementById('modalVerif').classList.remove('hidden');
   }
 
   function prosesMasukUjian() {
-    const nim = document.getElementById('vNim').value.trim();
-    const nama = document.getElementById('vNama').value.trim();
+    const nim = document.getElementById('vNim').value.trim(), nama = document.getElementById('vNama').value.trim();
     const token = document.getElementById('vToken').value.trim().toUpperCase();
     if (!nim || !nama) { alert('Harap isi NIM dan Nama Lengkap!'); return; }
-    if (token !== ujianTerpilih.token.toUpperCase()) { alert('Token salah! Cek kembali kode dari dosen.'); return; }
+    if (token !== ujianTerpilih.token.toUpperCase()) { alert('Token salah!'); return; }
     document.getElementById('modalVerif').classList.add('hidden');
-    jalankanSesiSoal(ujianTerpilih.mataKuliah, nama + ' (' + nim + ')', ujianTerpilih.soal, ujianTerpilih.durasiMenit);
+    modeAktif = 'ujian';
+    pesertaAktif = { kodeUnik: ujianTerpilih.kodeUnik, nim: nim, nama: nama, matkul: ujianTerpilih.mataKuliah };
+    jalankanSesiSoal(ujianTerpilih.mataKuliah, `${nama} (${nim}) • Kode: ${ujianTerpilih.kodeUnik}`, ujianTerpilih.soal, ujianTerpilih.durasiMenit);
   }
 
   function mulaiToefl(bagian) {
-    if (typeof dataToefl === 'undefined' || !dataToefl[bagian]) { alert('File toefl.js belum terbaca!'); return; }
+    if (typeof dataToefl === 'undefined' || !dataToefl[bagian]) return;
+    modeAktif = 'toefl';
     const paket = dataToefl[bagian];
-    jalankanSesiSoal(paket.judul, 'Mode Latihan TOEFL', paket.soal, paket.durasiMenit);
+    jalankanSesiSoal(paket.judul, 'Simulasi TOEFL Prediction', paket.soal, paket.durasiMenit);
   }
 
   function jalankanSesiSoal(judul, peserta, daftarSoal, menit) {
@@ -300,8 +345,40 @@
   function selesaiUjian() {
     clearInterval(timerInt);
     let benar = soalAktif.filter((item, idx) => jawabanUser[idx] === item.ans).length;
-    alert(`Ujian Selesai!\nJawaban Benar: ${benar} dari ${soalAktif.length}\nSkor Akhir: ${Math.round((benar / soalAktif.length) * 100)}`);
-    bukaHalaman('home', document.querySelectorAll('.nav-btn'));
+    if (modeAktif === 'toefl') {
+      let skorItp = Math.round(310 + (benar / soalAktif.length) * 367);
+      bukaHalaman('toefl', document.querySelectorAll('.nav-btn'));
+      document.getElementById('boxHasilToefl').classList.remove('hidden');
+      document.getElementById('judulHasilToefl').innerText = document.getElementById('judulUjianAktif').innerText;
+      document.getElementById('angkaSkorToefl').innerText = skorItp;
+      document.getElementById('detailHasilToefl').innerText = `Jawaban Benar: ${benar} dari ${soalAktif.length} soal (Konversi Skala TOEFL 310–677)`;
+    } else {
+      let nilai = Math.round((benar / soalAktif.length) * 100);
+      let riwayat = JSON.parse(localStorage.getItem('rekapUjianUIM') || '[]');
+      riwayat.push({ kodeUnik: pesertaAktif.kodeUnik, nim: pesertaAktif.nim, nama: pesertaAktif.nama, matkul: pesertaAktif.matkul, skor: nilai });
+      localStorage.setItem('rekapUjianUIM', JSON.stringify(riwayat));
+      alert(`Ujian Selesai!\nKode Unik: ${pesertaAktif.kodeUnik}\nNilai Anda: ${nilai}`);
+      bukaHalaman('rekap', document.querySelectorAll('.nav-btn'));
+    }
+  }
+
+  function tampilkanTabelRekap() {
+    let filter = document.getElementById('filterKodeUnik').value;
+    let riwayat = JSON.parse(localStorage.getItem('rekapUjianUIM') || '[]');
+    let hasil = filter === 'ALL' ? riwayat : riwayat.filter(r => r.kodeUnik === filter);
+    document.getElementById('bodyTabelRekap').innerHTML = hasil.length ? hasil.map(r => `<tr><td><strong>${r.kodeUnik}</strong></td><td>${r.nim}</td><td>${r.nama}</td><td>${r.matkul}</td><td><strong>${r.skor}</strong></td></tr>`).join('') : '<tr><td colspan="5" style="text-align:center;">Belum ada data nilai untuk kode unik ini.</td></tr>';
+  }
+
+  function downloadRekapCSV() {
+    let filter = document.getElementById('filterKodeUnik').value;
+    let riwayat = JSON.parse(localStorage.getItem('rekapUjianUIM') || '[]');
+    let hasil = filter === 'ALL' ? riwayat : riwayat.filter(r => r.kodeUnik === filter);
+    if (!hasil.length) { alert('Tidak ada data nilai untuk diunduh!'); return; }
+    let csv = "Kode Unik,NIM,Nama Mahasiswa,Mata Kuliah,Nilai\n" + hasil.map(r => `"${r.kodeUnik}","${r.nim}","${r.nama}","${r.matkul}",${r.skor}`).join("\n");
+    let link = document.createElement('a');
+    link.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+    link.download = `Rekap_Nilai_${filter}.csv`;
+    link.click();
   }
 
   function keluarSoal() { if (confirm('Yakin keluar dari ruang ujian?')) bukaHalaman('home', document.querySelectorAll('.nav-btn')); }
