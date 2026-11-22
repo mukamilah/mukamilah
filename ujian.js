@@ -8,7 +8,7 @@ const dataUjianKuliah = [
     labelTingkat: "Tingkat I (Sem 1)",
     mataKuliah: "English for Informatics (UTS)",
     durasiMenit: 60,
-    token: "TI2026",
+    token: "123456",
     soal: [
       { q: "1. In computer networking, a 'firewall' is primarily used to _____.", opts: ["increase download speed", "control incoming and outgoing network traffic", "store cloud backups", "compile source code"], ans: 1 },
       { q: "2. If the server _____ properly, the online examination will run smoothly.", opts: ["configured", "is configured", "configuring", "configure"], ans: 1 }
