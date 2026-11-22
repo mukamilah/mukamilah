@@ -1,7 +1,7 @@
-// DATA JADWAL, TOKEN & BANK SOAL UJIAN KULIAH (Simpan sebagai: ujian.js)
 const dataUjianKuliah = [
   {
     id: "ti-1-uts",
+    kodeUnik: "TI-UTS-01",
     jurusan: "ti",
     namaJurusan: "Teknik Informatika",
     tingkat: "1",
@@ -10,25 +10,13 @@ const dataUjianKuliah = [
     durasiMenit: 60,
     token: "TI2026",
     soal: [
-      {
-        q: "1. In computer networking, a 'firewall' is primarily used to _____.",
-        opts: [
-          "increase internet download speed",
-          "monitor and control incoming and outgoing network traffic",
-          "store backup files in the cloud",
-          "compile programming source code"
-        ],
-        ans: 1
-      },
-      {
-        q: "2. If the server _____ properly, the online examination system will run without interruption.",
-        opts: ["configured", "is configured", "configuring", "configure"],
-        ans: 1
-      }
+      { q: "1. In computer networking, a 'firewall' is primarily used to _____.", opts: ["increase download speed", "control incoming and outgoing network traffic", "store cloud backups", "compile source code"], ans: 1 },
+      { q: "2. If the server _____ properly, the online examination will run smoothly.", opts: ["configured", "is configured", "configuring", "configure"], ans: 1 }
     ]
   },
   {
     id: "tind-2-uas",
+    kodeUnik: "IND-UAS-02",
     jurusan: "tind",
     namaJurusan: "Teknik Industri",
     tingkat: "2",
@@ -37,20 +25,13 @@ const dataUjianKuliah = [
     durasiMenit: 60,
     token: "IND2026",
     soal: [
-      {
-        q: "1. Lean manufacturing aims to minimize _____ within a production system without sacrificing productivity.",
-        opts: ["quality", "waste", "safety", "efficiency"],
-        ans: 1
-      },
-      {
-        q: "2. All safety equipment _____ before operating the heavy machinery.",
-        opts: ["must check", "must be checked", "checking", "checked"],
-        ans: 1
-      }
+      { q: "1. Lean manufacturing aims to minimize _____ within a production system.", opts: ["quality", "waste", "safety", "efficiency"], ans: 1 },
+      { q: "2. All safety equipment _____ before operating heavy machinery.", opts: ["must check", "must be checked", "checking", "checked"], ans: 1 }
     ]
   },
   {
     id: "ts-3-uas",
+    kodeUnik: "SIPIL-UAS-03",
     jurusan: "ts",
     namaJurusan: "Teknik Sipil",
     tingkat: "3",
@@ -59,16 +40,8 @@ const dataUjianKuliah = [
     durasiMenit: 45,
     token: "SIPIL26",
     soal: [
-      {
-        q: "1. Which tense is most commonly used in the 'Methodology' section of an engineering research paper?",
-        opts: ["Future Continuous", "Simple Past Tense", "Present Continuous", "Future Perfect"],
-        ans: 1
-      },
-      {
-        q: "2. Reinforced concrete combines concrete's compressive strength with steel's _____ strength.",
-        opts: ["tensile", "thermal", "optical", "acoustic"],
-        ans: 0
-      }
+      { q: "1. Which tense is commonly used in the 'Methodology' section of a research paper?", opts: ["Future Continuous", "Simple Past Tense", "Present Continuous", "Future Perfect"], ans: 1 },
+      { q: "2. Reinforced concrete combines concrete's compressive strength with steel's _____ strength.", opts: ["tensile", "thermal", "optical", "acoustic"], ans: 0 }
     ]
   }
 ];
